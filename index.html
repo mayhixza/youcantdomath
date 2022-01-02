@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-    <link rel="preload" href="fonts/digital-7 (mono italic).ttf" as="font" type="font/ttf" crossorigin="anonymous">
-    <link rel="preload" href="fonts/digital-7 (mono).ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
     <title>Calculator</title>
 </head>    
@@ -19,7 +17,7 @@
         <table class="pcView">
             <tr>
                 <td colspan="7">
-                    <input type="number" id="display" value=""/>
+                    <input readonly type="text" id="display" value="0"/>
                 </td>
             </tr>
             <tr>
@@ -28,12 +26,12 @@
                 <td><input id="btnFact" type="button" name="operator" value="x!" onclick="set('!')" class="black"/></td>
                 <td><input id="btnOParen" type="button" name="operator" value="(" onclick="set('(')" /></td>
                 <td><input id="btnCParen" type="button" name="operator" value=")" onclick="set(')')"/></td>
-                <td><input id="btnPcnt" type="button" name="operator" value="%" onclick="set('%*')" /></td>
+                <td><input id="btnPcnt" type="button" name="operator" value="%" onclick="set('%')" /></td>
                 <td><input id="btnCE" type="button" name="operator" value="AC" onclick="ac()"/></td>
             </tr>
             <tr>
                 <td><input id="btnSineInv" type="button" name="operator" value="asin" onclick="set('arcsin(')" /></td>
-                <td><input id="btnSine" type="button" name="operator" value="sin" onclick="set('sin(')" /></td>
+                <td><input id="btnSine" type="button" name="operator" value="sin" onclick="set('randi')" /></td>
                 <td><input id="btnLN" type="button" name="operator" value="ln"onclick="set('In(')" onclick="set('In(')" /></td>
                 <td><input id="btn7" type="button" value="7" onclick="set('7')" /></td>
                 <td><input id="btn8" type="button" value="8" onclick="set('8')" /></td>
@@ -84,14 +82,14 @@
             </tr>
         </table>   
         <div class="mobileView">   
-            <input type="number" id="display-mobile" value="" />            
+            <input readonly type="text" id="display-mobile" value="0" />            
             <button class="operator e1 active">123</button>
             <button class="operator e2">Fx</button>
         <table class="table1">            
             <tr>
                 <td><input id="btnOParen" type="button" name="operator" value="(" onclick="set('(')" /></td>
                 <td><input id="btnCParen" type="button" name="operator" value=")" onclick="set(')')" /></td>
-                <td><input id="btnPcnt" type="button" name="operator" value="%" onclick="set('%*')"/></td>
+                <td><input id="btnPcnt" type="button" name="operator" value="%" onclick="set('%')"/></td>
                 <td><input id="btnCE" type="button" name="operator" value="AC" onclick="ac()" /></td>
             </tr>
             <tr>

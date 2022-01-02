@@ -68,7 +68,7 @@ td {
     text-align: center;
 }
 
-input[type=number] {
+input[type=text] {
     width: 42vw;
     height: 10vh;
     margin-bottom: 2vh;
@@ -83,7 +83,7 @@ input[type=number] {
     background-color: var(--bg);
 }
 
-input[type=number]:active {
+input[type=text]:active {
     border:0;
 }
 
@@ -95,7 +95,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type=text] {
   -moz-appearance: textfield;
 }
 
@@ -166,7 +166,7 @@ input[name=operator], .operator {
     input[type=button].op {
         font-size: 7vw;
     }
-    input[type=number] {
+    input[type=text] {
         width: 92%;
         height: 7vh;
         align-self: center;
