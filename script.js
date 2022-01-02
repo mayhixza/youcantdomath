@@ -2,6 +2,7 @@
 
 function set(op) {
     document.getElementById("display").value += op;
+    document.getElementById("display-mobile").value += op;
 }
 
 // Operation functions
@@ -9,47 +10,63 @@ function set(op) {
 function sine() {
     let tempStore = document.getElementById("display").value;
     document.getElementById("display").value = eval(Math.sin(tempStore));
+    let tempStoreM = document.getElementById("display-mobile").value;
+    document.getElementById("display-mobile").value = eval(Math.sin(tempStoreM));
 
 }
 
 function cosine() {
     let tempStore = document.getElementById("display").value;
     document.getElementById("display").value = eval(Math.cos(tempStore));
+    let tempStoreM = document.getElementById("display-mobile").value;
+    document.getElementById("display-mobile").value = eval(Math.cos(tempStoreM));
 }
 
 function tan() {
     let tempStore = document.getElementById("display").value;
     document.getElementById("display").value = eval(Math.tan(tempStore));
+    let tempStoreM = document.getElementById("display-mobile").value;
+    document.getElementById("display-mobile").value = eval(Math.tan(tempStoreM));
 
 }
 
 function asine() {
     let tempStore = document.getElementById("display").value;
     document.getElementById("display").value = eval(Math.asin(tempStore));
+    let tempStoreM = document.getElementById("display-mobile").value;
+    document.getElementById("display-mobile").value = eval(Math.asin(tempStoreM));
 
 }
 
 function acosine() {
     let tempStore = document.getElementById("display").value;
     document.getElementById("display").value = eval(Math.acos(tempStore));
+    let tempStoreM = document.getElementById("display-mobile").value;
+    document.getElementById("display-mobile").value = eval(Math.acos(tempStoreM));
 
 }
 
 function atan() {
     let tempStore = document.getElementById("display").value;
     document.getElementById("display").value = eval(Math.atan(tempStore));
+    let tempStoreM = document.getElementById("display-mobile").value;
+    document.getElementById("display-mobile").value = eval(Math.atan(tempStoreM));
 
 }
 
 function sqrRoot() {
     let tempStore = document.getElementById("display").value;
     document.getElementById("display").value = eval(Math.sqrt(tempStore));
+    let tempStoreM = document.getElementById("display-mobile").value;
+    document.getElementById("display-mobile").value = eval(Math.sqrt(tempStoreM));
 
 }
 
 function fLog() {
     let tempStore = document.getElementById("display").value;
     document.getElementById("display").value = eval(Math.log(tempStore));
+    let tempStoreM = document.getElementById("display-mobile").value;
+    document.getElementById("display-mobile").value = eval(Math.log(tempStoreM));
 
 }
 
@@ -60,16 +77,20 @@ function answer() {
     let gentext = document.querySelector(".genText")
     gentext.innerHTML=phrase
     let Exp = document.getElementById("display");
-    let Exp1 = Exp.value;
-    let result = eval(Exp1);
-    //alert(result);
     Exp.value = 1;
+    let Exp1 = document.getElementById("display-mobile");
+    Exp1.value = 1;
 }
+
+document.addEventListener("keyup", function(event) {
+    if (event.code === 'Enter') {
+    answer();
+    }
+});
 
 // CE and AC functions
 
 function ce() {
-
     let elem = document.getElementById("display").value;
     let length = elem.length;
     length--;
@@ -115,7 +136,7 @@ function random() {
     return phrase;
 }
 
-// Hiding elements based on res
+// Fx and 123 table on mobile view
 
 let table1 = document.querySelector(".table1")
 let table2 = document.querySelector(".table2")
