@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="preload" href="fonts/digital-7 (mono italic).ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="fonts/digital-7 (mono).ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
     <title>Calculator</title>
 </head>    
 <body>
@@ -16,70 +19,58 @@
         <table class="pcView">
             <tr>
                 <td colspan="7">
-                    <input readonly type="text" id="display" value="" />
+                    <input type="number" id="display" value=""/>
                 </td>
             </tr>
             <tr>
                 <td><input id="btnRad" type="button" name="operator" value="rad" /></td>
                 <td><input id="btnDeg" type="button" name="operator" value="deg" /></td>
-                <td><input id="btnFact" type="button" name="operator" value="x!" class="black"/></td>
+                <td><input id="btnFact" type="button" name="operator" value="x!" onclick="set('!')" class="black"/></td>
                 <td><input id="btnOParen" type="button" name="operator" value="(" onclick="set('(')" /></td>
                 <td><input id="btnCParen" type="button" name="operator" value=")" onclick="set(')')"/></td>
-                <td><input id="btnPcnt" type="button" name="operator" value="%" /></td>
+                <td><input id="btnPcnt" type="button" name="operator" value="%" onclick="set('%*')" /></td>
                 <td><input id="btnCE" type="button" name="operator" value="AC" onclick="ac()"/></td>
             </tr>
             <tr>
-                <td><input id="btnSineInv" type="button" name="operator" value="asin" onclick="asine()" /></td>
-                <td><input id="btnSine" type="button" name="operator" value="sin" onclick="sine()" /></td>
-                <td><input id="btnLN" type="button" name="operator" value="ln" /></td>
+                <td><input id="btnSineInv" type="button" name="operator" value="asin" onclick="set('arcsin(')" /></td>
+                <td><input id="btnSine" type="button" name="operator" value="sin" onclick="set('sin(')" /></td>
+                <td><input id="btnLN" type="button" name="operator" value="ln"onclick="set('In(')" onclick="set('In(')" /></td>
                 <td><input id="btn7" type="button" value="7" onclick="set('7')" /></td>
                 <td><input id="btn8" type="button" value="8" onclick="set('8')" /></td>
                 <td><input id="btn9" type="button" value="9" onclick="set('9')" /></td>
                 <td><input id="btnDiv" type="button" name="operator" value="÷" onclick="set('/')" /></td>
             </tr>
             <tr>
-                <td><input id="btnCosInv" type="button" name="operator" value="acos" onclick="acosine()" /></td>
-                <td><input id="btnCos" type="button" name="operator" value="cos" onclick="cosine()" /></td>
-                <td><input id="btnLog" type="button" name="operator" value="log" onclick="fLog()" /></td>
+                <td><input id="btnCosInv" type="button" name="operator" value="acos" onclick="set('arccos(')" /></td>
+                <td><input id="btnCos" type="button" name="operator" value="cos" onclick="set('cos(')" /></td>
+                <td><input id="btnLog" type="button" name="operator" value="log" onclick="set('log(')" /></td>
                 <td><input id="btn4" type="button" value="4" onclick="set('4')" /></td>
                 <td><input id="btn5" type="button" value="5" onclick="set('5')" /></td>
                 <td><input id="btn6" type="button" value="6" onclick="set('6')" /></td>
                 <td><input id="btnMul" type="button" name="operator" value="×" onclick="set('*')" /></td>
             </tr>
             <tr>
-                <td><input id="btnTanInv" type="button" name="operator" value="atan" onclick="atan()" /></td>
-                <td><input id="btnTan" type="button" name="operator" value="tan" onclick="tan()" /></td>
-                <td><input id="btnSqrt" type="button" name="operator" value="√" onclick="sqrRoot()" /></td>
+                <td><input id="btnTanInv" type="button" name="operator" value="atan" onclick="set('arctan(')" /></td>
+                <td><input id="btnTan" type="button" name="operator" value="tan" onclick="set('tan(')" /></td>
+                <td><input id="btnSqrt" type="button" name="operator" value="√" onclick="set('√')" /></td>
                 <td><input id="btn1" type="button" value="1" onclick="set('1')" /></td>
                 <td><input id="btn2" type="button" value="2" onclick="set('2')" /></td>
                 <td><input id="btn3" type="button" value="3" onclick="set('3')" /></td>
                 <td><input id="btnSub" type="button" name="operator" value="-" onclick="set('-')" /></td>
             </tr>
             <tr>
-                <td><input id="btnAns" type="button" name="operator" value="Ans" /></td>
-                <td>
-                    <input id="btnPi" type="button" name="operator" value="π" onclick="set('3.14')" />
-                </td>
-                <td>
-                    <input id="btnE" type="button" name="operator" value="e" />
-                </td>
-                <td>
-                    <input id="btn0" type="button" value="0" onclick="set('0')" />
-                </td>
-                <td>
-                    <input id="btnPeriod" type="button" value="." />
-                </td>
-                <td>
-                    <input id="btnEqual" type="button" name="equal" value="=" onclick="answer()" class="red" />
-                </td>
-                <td>
-                    <input id="btnAdd" type="button" name="operator" value="+" onclick="set('+')" />
-                </td>
+                <td><input id="btnAns" type="button" name="operator" value="Ans" onclick="set('Ans')"/></td>
+                <td><input id="btnPi" type="button" name="operator" value="π" onclick="set('3.14')" /></td>
+                <td><input id="btnE" type="button" name="operator" value="e" onclick="set('e')"/></td>
+                <td><input id="btn0" type="button" value="0" onclick="set('0')" /></td>
+                <td><input id="btnPeriod" type="button" value="." onclick="set('.')"/></td>
+                <td><input id="btnEqual" type="button" name="equal" value="=" onclick="answer()" class="red" /></td>
+                <td><input id="btnAdd" type="button" name="operator" value="+" onclick="set('+')" /></td>
             </tr>
             <tr>
                 <td colspan="2" >
                     <button id="btnspan2" class="operator" onclick="ac()">
-                        <img src="assets/reset.png" />
+                        <img src="assets/reset.svg" />
                     </button>
                 </td>
                 <td></td>
@@ -87,20 +78,20 @@
                 <td></td>
                 <td colspan="2" >
                     <button id="btnspan2" class="operator" onclick="ce()">
-                        <img src="assets/back.png" />
+                        <img src="assets/back.svg" />
                     </button>
                 </td>
             </tr>
         </table>   
         <div class="mobileView">   
-            <input readonly type="text" id="display-mobile" value="" />            
+            <input type="number" id="display-mobile" value="" />            
             <button class="operator e1 active">123</button>
             <button class="operator e2">Fx</button>
         <table class="table1">            
             <tr>
                 <td><input id="btnOParen" type="button" name="operator" value="(" onclick="set('(')" /></td>
                 <td><input id="btnCParen" type="button" name="operator" value=")" onclick="set(')')" /></td>
-                <td><input id="btnPcnt" type="button" name="operator" value="%" /></td>
+                <td><input id="btnPcnt" type="button" name="operator" value="%" onclick="set('%*')"/></td>
                 <td><input id="btnCE" type="button" name="operator" value="AC" onclick="ac()" /></td>
             </tr>
             <tr>
@@ -123,8 +114,8 @@
             </tr>
             <tr>
                 <td><input id="btn0" type="button" value="0" onclick="set('0')" /></td>
-                <td><input id="btnPeriod" type="button" value="." /></td>
-                <td><input id="btnEqual" type="button" name="equal" value="=" onclick="answer()" class="red" /></td>
+                <td><input id="btnPeriod" type="button" value="." onclick="set('.')"/></td>
+                <td><input id="btnEqual" type="button" name="equal" value="=" onclick="answer()"/></td>
                 <td><input id="btnAdd" class="op" type="button" name="operator" value="+" onclick="set('+')" /></td>
             </tr>
         </table>
@@ -132,32 +123,32 @@
             <tr>
                 <td><input id="btnRad" type="button" name="operator" value="rad" /></td>
                 <td><input id="btnDeg" type="button" name="operator" value="deg" /></td>
-                <td><input id="btnFact" type="button" name="operator" value="x!" class="black"/></td>
-                <td><input id="btnLN" type="button" name="operator" value="ln" /></td>
+                <td><input id="btnFact" type="button" name="operator" value="x!" onclick="set('!')" class="black"/></td>
+                <td><input id="btnLN" type="button" name="operator" value="ln" onclick="set('In(')" /></td>
             </tr>
             <tr>
-                <td><input id="btnSineInv" type="button" name="operator" value="asin" onclick="asine()" /></td>
-                <td><input id="btnSine" type="button" name="operator" value="sin" onclick="sine()" /></td>
-                <td><input id="btnCosInv" type="button" name="operator" value="acos" onclick="acosine()" /></td>
-                <td><input id="btnCos" type="button" name="operator" value="cos" onclick="cosine()" /></td>
+                <td><input id="btnSineInv" type="button" name="operator" value="asin" onclick="set('arcsin(')" /></td>
+                <td><input id="btnSine" type="button" name="operator" value="sin" onclick="set('sin(')" /></td>
+                <td><input id="btnCosInv" type="button" name="operator" value="acos" onclick="set('arccos(')" /></td>
+                <td><input id="btnCos" type="button" name="operator" value="cos" onclick="set('cos(')" /></td>
             </tr>
             <tr>
-                <td><input id="btnLog" type="button" name="operator" value="log" onclick="fLog()" /></td>
-                <td><input id="btnSqrt" type="button" name="operator" value="√" onclick="sqrRoot()" /></td>
-                <td><input id="btnTanInv" type="button" name="operator" value="atan" onclick="atan()" /></td>
-                <td><input id="btnTan" type="button" name="operator" value="tan" onclick="tan()" /></td>
+                <td><input id="btnLog" type="button" name="operator" value="log" onclick="set('log(')"/></td>
+                <td><input id="btnSqrt" type="button" name="operator" value="√" onclick="set('√')" /></td>
+                <td><input id="btnTanInv" type="button" name="operator" value="atan" onclick="set('arctan(')" /></td>
+                <td><input id="btnTan" type="button" name="operator" value="tan" onclick="set('tan(')" /></td>
             </tr>
             <tr>
-                <td><input id="btnAns" type="button" name="operator" value="Ans" /></td>
+                <td><input id="btnAns" type="button" name="operator" value="Ans" onclick="set('Ans')"/></td>
                 <td><input id="btnPi" type="button" name="operator" value="π" onclick="set('3.14')" /></td>
-                <td><input id="btnE" type="button" name="operator" value="e" /></td>
+                <td><input id="btnE" type="button" name="operator" value="e"  onclick="set('e')"/></td>
                 <td><input id="btnEqual" class="op" type="button" name="equal" value="=" onclick="answer()" /></td>
             </tr>
         </table>
         <div class="btnelements">
-            <button id="btnspan2" class="operator" onclick="ac()"><img src="assets/reset.png" />
+            <button id="btnspan2" class="operator" onclick="ac()"><img src="assets/reset.svg" />
             </button>
-            <button id="btnspan2" class="operator" onclick="ce()"><img src="assets/back.png" />
+            <button id="btnspan2" class="operator" onclick="ce()"><img src="assets/back.svg" />
             </button>
         </div>
         </div>

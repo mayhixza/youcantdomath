@@ -68,7 +68,7 @@ td {
     text-align: center;
 }
 
-input[type=text] {
+input[type=number] {
     width: 42vw;
     height: 10vh;
     margin-bottom: 2vh;
@@ -83,8 +83,20 @@ input[type=text] {
     background-color: var(--bg);
 }
 
-input[type=text]:active {
+input[type=number]:active {
     border:0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 input[type=button], .operator {
@@ -154,7 +166,7 @@ input[name=operator], .operator {
     input[type=button].op {
         font-size: 7vw;
     }
-    input[type=text] {
+    input[type=number] {
         width: 92%;
         height: 7vh;
         align-self: center;

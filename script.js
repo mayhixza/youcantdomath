@@ -7,12 +7,46 @@ function set(op) {
 
 // Operation functions
 
+// function PosEnd(end) {
+//     let len = end.value.length -1;
+        
+//     // Mostly for Web Browsers
+//     if (end.setSelectionRange) {
+//         end.focus();
+//         end.setSelectionRange(len, len);
+//     } else if (end.createTextRange) {
+//         var t = end.createTextRange();
+//         t.collapse(true);
+//         t.moveEnd('character', len);
+//         t.moveStart('character', len);
+//         t.select();
+//     }
+// }
+
+// function insertAtCursor(myField, myValue=set(op)) {
+//     //IE support
+//     if (document.selection) {
+//         myField.focus();
+//         sel = document.selection.createRange();
+//         sel.text = myValue;
+//     }
+//     //MOZILLA and others
+//     else if (myField.selectionStart || myField.selectionStart == '0') {
+//         var startPos = myField.selectionStart;
+//         var endPos = myField.selectionEnd;
+//         myField.value = myField.value.substring(0, startPos)
+//             + myValue
+//             + myField.value.substring(endPos, myField.value.length);
+//     } else {
+//         myField.value += myValue;
+//     }
+// }
+
 function sine() {
     let tempStore = document.getElementById("display").value;
     document.getElementById("display").value = eval(Math.sin(tempStore));
     let tempStoreM = document.getElementById("display-mobile").value;
     document.getElementById("display-mobile").value = eval(Math.sin(tempStoreM));
-
 }
 
 function cosine() {
@@ -27,7 +61,6 @@ function tan() {
     document.getElementById("display").value = eval(Math.tan(tempStore));
     let tempStoreM = document.getElementById("display-mobile").value;
     document.getElementById("display-mobile").value = eval(Math.tan(tempStoreM));
-
 }
 
 function asine() {
@@ -35,7 +68,6 @@ function asine() {
     document.getElementById("display").value = eval(Math.asin(tempStore));
     let tempStoreM = document.getElementById("display-mobile").value;
     document.getElementById("display-mobile").value = eval(Math.asin(tempStoreM));
-
 }
 
 function acosine() {
@@ -67,7 +99,7 @@ function fLog() {
     document.getElementById("display").value = eval(Math.log(tempStore));
     let tempStoreM = document.getElementById("display-mobile").value;
     document.getElementById("display-mobile").value = eval(Math.log(tempStoreM));
-
+ 
 }
 
 // Result function 
