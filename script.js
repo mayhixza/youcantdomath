@@ -92,18 +92,23 @@ document.addEventListener("keyup", function(event) {
 
 function ce() {
     let elem = document.getElementById("display").value;
+    let elem1 = document.getElementById("display-mobile").value;
     let length = elem.length;
     length--;
     let a = elem.substr(0, length);
     document.getElementById("display").value = a;
+    let b = elem1.substr(0, length);
+    document.getElementById("display-mobile").value = b;
 }
 
 function ac() {
-
     let elem = document.getElementById("display").value;
+    let elem1 = document.getElementById("display-mobile").value;
     let length = 0;
     let a = elem.substr(0, length);
+    let b = elem1.substr(0, length);
     document.getElementById("display").value = a;
+    document.getElementById("display-mobile").value = b;
 }
 
 // Randomm text generated after result 
