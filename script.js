@@ -161,3 +161,31 @@ e2.onclick = function() {
     e1.classList.remove("active");
     e2.classList.add("active");
 }
+
+// Rad and Deg 
+
+let btnRadM = document.querySelector("#btnRadM");
+let btnDegM = document.querySelector("#btnDegM");
+
+btnDegM.onclick = function() {
+    btnDegM.classList.add("btnBorder");
+    btnRadM.classList.remove("btnBorder");
+}
+
+btnRadM.onclick = function() {
+    btnRadM.classList.add("btnBorder");
+    btnDegM.classList.remove("btnBorder");
+}
+
+let btnRad = document.querySelector("#btnRad");
+let btnDeg = document.querySelector("#btnDeg");
+
+btnDeg.onclick = function() {
+    btnDeg.classList.add("btnBorder");
+    btnRad.classList.remove("btnBorder");
+}
+
+btnRad.onclick = function() {
+    btnRad.classList.add("btnBorder");
+    btnDeg.classList.remove("btnBorder");
+}

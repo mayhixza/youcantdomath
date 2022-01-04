@@ -143,6 +143,10 @@ input[name=operator], .operator {
     overflow: hidden;
 }
 
+input[type=button].btnBorder {
+    border: solid 1px white;
+}
+
 @media (max-width: 500px) {
     .pcView {
         display: none;
@@ -174,7 +178,7 @@ input[name=operator], .operator {
         padding: 0;
         padding-right: 2vw;
         font-size: 7vw;
-        line-height: 20;
+        line-height: 40;
     }
     h1 {
         margin-left: 3vw;
