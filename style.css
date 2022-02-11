@@ -178,7 +178,7 @@ input[type=button].btnBorder {
         padding: 0;
         padding-right: 2vw;
         font-size: 7vw;
-        line-height: normal;
+        line-height: 100%;
     }
     h1 {
         margin-left: 3vw;
