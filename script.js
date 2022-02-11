@@ -78,6 +78,11 @@ function answer() {
     Exp.value = 1;
     let Exp1 = document.getElementById("display-mobile");
     Exp1.value = 1;
+    if (randomNum < 6) {
+        randomNum = randomNum + 1;
+    } else {
+        randomNum = 0;
+    }
 }
 
 document.addEventListener("keyup", function(event) {
@@ -110,9 +115,11 @@ function ac() {
 }
 
 // Randomm text generated after result 
+ 
+let randomNum = 0;
 
 function random() {
-    let randomNum = Math.floor(Math.random() * 7);    
+    // let randomNum = Math.floor(Math.random() * 7);   
     let phrase;
     switch (randomNum) {
         case 0:
